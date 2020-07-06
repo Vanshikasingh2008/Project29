@@ -16,12 +16,14 @@ class SlingShot{
     }
 
     display(){
+        push();
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
             strokeWeight(6);
             stroke(73,220,200);
             line(pointA.x, pointA.y, pointB.x, pointB.y);
+            pop();
         }
     }
 }

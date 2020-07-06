@@ -62,8 +62,8 @@ function draw(){
     background(rgb(56,44,44));
     Engine.update(engine);
 
-    imageMode(CENTER);
-    image(polygonimg,polygon.position.x,polygon.position.y,40,40);
+    //imageMode(CENTER);
+    //image(polygonimg,polygon.position.x,polygon.position.y,40,40);
 
     block.display();
     block2.display();
@@ -94,13 +94,15 @@ function draw(){
     base2.display();
     ground.display();
     slingshot.display();
+    ellipseMode(RADIUS);
+    ellipse(polygon.position.x,polygon.position.y,20);
 
-    mouseDragged();
-    mouseReleased();
+    //mouseDragged();
+   // mouseReleased();
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+    Matter.Body.setPosition(polygon, {x: mouseX , y: mouseY});
     console.log(polygon);
 }
 
